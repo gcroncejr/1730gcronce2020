@@ -19,13 +19,24 @@ namespace _1730gcronceex1b
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //txtTotal.Text = "10";
-            //txtTotal.ReadOnly = true;
+            
+            txtDiscountAmount.Text = 
+                (Convert.ToDecimal(txtSubtotal1.Text) 
+                * Convert.ToDecimal(txtDiscountPercent.Text) / 100).ToString("0.00");
+            txtTotal.Text =
+                (Convert.ToDecimal(txtSubtotal1.Text)
+                - Convert.ToDecimal(txtDiscountAmount.Text)).ToString("0.00");
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtDiscountPercent_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
